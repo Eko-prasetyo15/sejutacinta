@@ -4,7 +4,7 @@ import { getAllBook } from '../Redux/Actions'
 
 const List = (props) => {
     const [page, setPage] = useState(1)
-    const [size, setSize] = useState(15)
+    const [size, setSize] = useState(24)
     const [updateSearch, setUpdateSearch] = useState('')
     const dispatch = useDispatch()
 
@@ -23,19 +23,15 @@ const List = (props) => {
     const onClickPrev = () => {
         setPage(page - 1)
     }
-    const onCLick = (i) => {
-        setPage(i)
-    }
-    console.log(page, 'page')
+
     const stateAllbook = useSelector((state) => state.Datas.allbook)
     const searchBook = stateAllbook.filter(function (item) {
-        console.log(item, 'ini item')
         return item.title.toLowerCase().includes(updateSearch)
     });
 
     const listSearch = searchBook.map((book, idx) => {
         return (
-            <div class="col-lg-3 col-sm-12 mb-3" key={idx}>
+            <div class="col-lg-2 col-sm-12 mb-3" key={idx}>
                 <div class="card" key={idx} style={{ border: 'none' }}>
                     <img src={book.cover_url} class="card-img-top" alt="..." style={{ borderRadius: '20px' }} />
                     <div class="card-body">

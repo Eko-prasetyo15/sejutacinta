@@ -12,7 +12,7 @@ const App = () => {
       </Layout>
     );
   };
-  // const [currentUser, SetcurrentUser] = useState(null);
+  
   return (
     <Router history={History}>
       <Switch>
